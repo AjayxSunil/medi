@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -34,7 +35,7 @@ export default function RootLayout({
               <h1 className="text-xl font-bold text-green-600">MediReminder</h1>
               <nav className="space-x-4 text-sm text-gray-700">
                 {/* Later: add links like Dashboard, About, Profile */}
-                <a href="/" className="hover:text-green-600">Home</a>
+                <Link href="/" className="hover:text-green-600">Home</Link>
                 <a href="#" className="hover:text-green-600">About</a>
               </nav>
             </div>

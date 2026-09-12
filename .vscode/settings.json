@@ -1,0 +1,8 @@
+{
+  "chat.tools.terminal.autoApprove": {
+    "/^Set-Location 'C:\\\\Users\\\\Ajay Sunil\\\\Downloads\\\\MediReminder-Website-main'; @'\nexport async function GET\\(\\) \\{\n  return Response\\.json\\(\\{ message: 'MediReminder API is ready\\.' \\}\\);\n\\}\n\nexport async function POST\\(\\) \\{\n  return Response\\.json\\(\\{ message: 'MediReminder API is ready\\.' \\}\\);\n\\}\n'@ \\| Set-Content -Path 'src/app/api/reminders/route\\.ts' -Encoding utf8$/": {
+      "approve": true,
+      "matchCommandLine": true
+    }
+  }
+}

@@ -1,6 +1,5 @@
 'use client';
-import Image from "next/image";
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -35,7 +34,7 @@ export default function Home() {
             frequency: values.frequency,
             nextDate: new Date()
         };
-        let split: string[] = values.time.split(":");
+        const split = values.time.split(":");
         newReminder.nextDate.setHours(Number(split[0]), Number(split[1]), 0, 0);
         addReminder(newReminder);
         reset();
@@ -72,7 +71,7 @@ export default function Home() {
                 }
 
 
-                let timeDiff: number = reminder.nextDate.getTime() - new Date().getTime();
+                const timeDiff = reminder.nextDate.getTime() - new Date().getTime();
 
                 if (timeDiff < 1000 * 60 * 60 * 24) {
                     setTimeout(() => {
@@ -95,7 +94,7 @@ export default function Home() {
             clearInterval(interval);
 
         }
-    }, [reminders])
+    }, [reminders, updateReminder])
 
 
     return (
@@ -123,7 +122,7 @@ export default function Home() {
                     </div>
                     <div className="sm:col-span-1">
                         <label className="block text-sm font-medium">Frequency </label>
-                        <select id="frequency" name="frequency">
+                        <select id="frequency" {...register('frequency')}>
                             <option value="daily">Daily</option>
                             <option value="weekly">Weekly</option>
                             <option value="monthly">Monthly</option>
